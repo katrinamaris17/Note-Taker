@@ -47,16 +47,6 @@ app.post("/api/notes", function(req, res) {
 
 app.delete("/api/notes/:id", function(req, res) {
     console.log (req.params)
-    // read filter documentation, see below callback function
-    // const result = db.filter(function(element){
-    //     console.log(element);
-    //     return element.id !== req.params.id;
-    // })
-
-    // fs.writeFileSync(path.join(__dirname, "./db/db.json"), JSON.stringify(result));
-
-    // res.json(result)
-    // db = result;
     for (let index = 0; index < db.length; index++) {
         if (db[index]["id"] === req.params.id) {
             db.splice(index, 1)
